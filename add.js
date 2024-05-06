@@ -6,18 +6,43 @@
         a.id = "ref-btn";
         a.style.cursor = "pointer";
         // a.setAttribute("href", "/in/yangshun/overlay/contact-info/");
-        a.innerHTML = "Get referred";
-        document.querySelector(".SndfhJCRCNhMRfeLPAudhPMGuRexFAUnCgtCQ.mt2").appendChild(sp);
+        a.innerHTML = "Get Referred";
+        // document.querySelector(".SndfhJCRCNhMRfeLPAudhPMGuRexFAUnCgtCQ.mt2").appendChild(sp);
+        // document.querySelector("#ref-span").appendChild(a);
+        var target = document.querySelector(".SndfhJCRCNhMRfeLPAudhPMGuRexFAUnCgtCQ.mt2");
+        if (target) {
+        target.appendChild(sp);
         document.querySelector("#ref-span").appendChild(a);
+        }
     }
-    function addeventlistner(){
-        document.querySelector("#ref-btn").addEventListener("click", function(){
-            alert('Get referred button is clicked');
-        });
+    function addEventListeners() {
+        var refBtn = document.querySelector("#ref-btn");
+        if (refBtn) {
+          refBtn.addEventListener("click", function () {
+            var composeButton = document.querySelector(".entry-point.profile-action-compose-option button");
+            if (composeButton) {
+              composeButton.click();
+            }
+          });
+        }
+      }
+    
 
-    }
-    addbtn();
-    addeventlistner();
-    alert('add.js is activated');
+      function initialize() {
+        addbtn();
+        addEventListeners();
+      }
+    
+      initialize();
+
+      const observer = new MutationObserver((mutations) => {
+        initialize();
+      });
+    
+    //   observer.observe(document, {
+    //     childList: true,
+    //     subtree: true,
+    //   });
 
 })();
+
