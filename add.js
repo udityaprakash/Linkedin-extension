@@ -9,10 +9,11 @@
         a.innerHTML = "Get Referred";
         // document.querySelector(".SndfhJCRCNhMRfeLPAudhPMGuRexFAUnCgtCQ.mt2").appendChild(sp);
         // document.querySelector("#ref-span").appendChild(a);
-        var target = document.querySelector(".SndfhJCRCNhMRfeLPAudhPMGuRexFAUnCgtCQ.mt2");
+        var target = document.querySelector(".debWPjvoLthHmxanBpRdaFCxfxOIAXtjuGI.mt2");
         if (target) {
         target.appendChild(sp);
         document.querySelector("#ref-span").appendChild(a);
+        alert("button added");
         }
     }
     function addEventListeners() {
@@ -35,9 +36,9 @@
     
       initialize();
 
-      const observer = new MutationObserver((mutations) => {
-        initialize();
-      });
+      // const observer = new MutationObserver((mutations) => {
+      //   initialize();
+      // });
     
     //   observer.observe(document, {
     //     childList: true,
