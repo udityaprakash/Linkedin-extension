@@ -32,7 +32,7 @@
                   const match = gen.match(genderRegex);
                   const gend = match ? match[1] : '';
                   const salutation = genderName(gend); 
-
+                  const education = document.querySelectorAll(".mr1 span");
                   toInput.innerHTML = "<p>hello "+salutation+" ,I am a great fan of yours<p>";
                 }
               }, 1000);
