@@ -14,7 +14,7 @@
         if (target) {
         target.appendChild(sp);
         document.querySelector("#ref-span").appendChild(a);
-        alert("button added");
+        // alert("button added");
         }
     }
     function addEventListeners() {
@@ -27,13 +27,17 @@
               setTimeout(() => {
                 var toInput = document.querySelector(".msg-form__contenteditable");
                 if (toInput) {
-                  var gen = document.querySelectorAll(".mt2 div div span")[1].innerHTML;
-                  const genderRegex = /\(([^)]+)\)/;
-                  const match = gen.match(genderRegex);
-                  const gend = match ? match[1] : '';
-                  const salutation = genderName(gend); 
+                  // var gen = document.querySelectorAll(".mt2 div div span")[1].innerHTML;
+                  // const genderRegex = /\(([^)]+)\)/;
+                  // const match = gen.match(genderRegex);
+                  // const gend = match ? match[1] : '';
+                  // const salutation = genderName(gend);
+                  const name = document.querySelectorAll(".mt2 div div span a h1")[0].innerHTML;
                   const education = document.querySelectorAll(".mr1 span");
-                  toInput.innerHTML = "<p>hello "+salutation+" ,I am a great fan of yours<p>";
+                  toInput.innerHTML = `<p>Hello ${name},
+                  <p>
+                  </p>
+                  I am a great fan of yours</p>`;
                 }
               }, 1000);
               // document.querySelectorAll(".msg-form__contenteditable")[0].innerHTML=`<p>hello sir i am a great fan of yours<p>`;
@@ -57,17 +61,13 @@
         addbtn();
         addEventListeners();
       }
-    
-      initialize();
 
-      // const observer = new MutationObserver((mutations) => {
-      //   initialize();
-      // });
-    
-    //   observer.observe(document, {
-    //     childList: true,
-    //     subtree: true,
-    //   });
+      setInterval(() => {
+        if(window.location.pathname.includes("/in/") && !document.querySelector("#ref-btn")){
+
+          initialize();
+        }
+      }, 1000);
 
 })();
 

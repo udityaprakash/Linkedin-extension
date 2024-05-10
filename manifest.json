@@ -5,7 +5,7 @@
     "manifest_version":3,
     "content_scripts": [
         {
-            "matches": ["*://www.linkedin.com/in/*"],
+            "matches": ["*://www.linkedin.com/*"],
             "js": ["add.js"]
         }
     ]
